@@ -83,9 +83,13 @@ public class DashboardViewModel : ViewModelBase, IRoutableViewModel
 
     #region METHODS
     /// <summary>
-    /// 
+    /// The method for <see cref="DashboardViewModel.LogoutCommand"/> that allows a user to
+    /// Logoff.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>
+    /// Returns an <see cref="IObservable{IRoutableViewModel}"/>... in this case it will navigate back 
+    /// to the <see cref="LoginViewModel"/>.
+    /// </returns>
     private async Task<IRoutableViewModel> Logout()
     {
         return await this.HostScreen.Router.NavigateBack.Execute();
