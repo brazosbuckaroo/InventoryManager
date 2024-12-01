@@ -4,14 +4,11 @@
 /// A <see cref="ViewModelBase"/> made for the main dashboard screen of the
 /// application.
 /// </summary>
-public class DashboardViewModel : ViewModelBase, IRoutableViewModel
+public class DashboardViewModel : RoutableViewModelBase
 {
     #region PROPERTIES
     /// <inheritdoc/>
-    public IScreen HostScreen { get; }
-
-    /// <inheritdoc/>
-    public string UrlPathSegment { get; } = Guid.NewGuid().ToString().Substring(0, 5);
+    //public IScreen HostScreen { get; }
 
     /// <summary>
     /// The connection string meant to be used to connect to

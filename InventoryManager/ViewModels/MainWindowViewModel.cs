@@ -4,12 +4,9 @@
 /// A class meant to contain all the ViewModels that the <see cref="MainWindow"/>
 /// is meant to know about.
 /// </summary>
-public class MainWindowViewModel : ReactiveObject, IScreen
+public class MainWindowViewModel : WindowViewModelBase
 {
     #region PROPERTIES
-    /// <inheritdoc/>
-    public RoutingState Router { get; } = new RoutingState();
-
     /// <summary>
     /// The ViewModel meant for the <see cref="LoginView"/>.
     /// </summary>

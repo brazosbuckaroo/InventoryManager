@@ -4,7 +4,7 @@ namespace InventoryManager.ViewModels;
 /// A <see cref="ViewModelBase"/> made for the login screen of the
 /// application.
 /// </summary>
-public class LoginViewModel : ViewModelBase, IRoutableViewModel
+public class LoginViewModel : RoutableViewModelBase
 {
     #region PROPERTIES
     /// <summary>
@@ -23,16 +23,10 @@ public class LoginViewModel : ViewModelBase, IRoutableViewModel
     /// </summary>
     public Interaction<LoginErrorWindowViewModel, string> LoginErrorInteraction { get; }
 
-    /// <inheritdoc/>
-    public IScreen HostScreen { get; }
-
     /// <summary>
     /// A <see cref="ISettings"/> used to get application settings and whathave you.
     /// </summary>
     public ISettings SettingsService { get; private set; }
-
-    /// <inheritdoc/>
-    public string UrlPathSegment { get; } = Guid.NewGuid().ToString().Substring(0, 5);
 
     /// <summary>
     /// A <see cref="DashboardViewModel"/> used to load the 
