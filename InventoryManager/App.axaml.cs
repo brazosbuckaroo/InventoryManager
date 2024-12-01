@@ -1,13 +1,4 @@
-﻿using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Markup.Xaml;
-using InventoryManager.Models.Services;
-using InventoryManager.Models.Types;
-using InventoryManager.ViewModels;
-using InventoryManager.Views;
-using System.Diagnostics;
-
-namespace InventoryManager;
+﻿namespace InventoryManager;
 
 public partial class App : Application
 {
