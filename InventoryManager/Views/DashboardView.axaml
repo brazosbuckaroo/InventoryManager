@@ -19,7 +19,7 @@
     <DockPanel Background="DimGray"
                Grid.Row="0"
                Grid.ColumnSpan="3">
-      <Menu>
+      <Menu Background="Black">
         <MenuItem Header="_Dashboards"
                   FontSize="12"
                   Background="Gray">
@@ -80,7 +80,8 @@
       
       <Button Background="DarkRed"
               FontSize="20"
-              HorizontalAlignment="Right">
+              HorizontalAlignment="Right"
+              Command="{Binding LogoutCommand}">
         <StackPanel Orientation="Horizontal"
                     Spacing="8">
           <TextBlock FontSize="12"

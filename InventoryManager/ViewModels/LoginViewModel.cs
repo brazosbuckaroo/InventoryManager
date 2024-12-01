@@ -223,6 +223,8 @@ public class LoginViewModel : ViewModelBase, IRoutableViewModel
             return await this.HostScreen.Router.Navigate.Execute(this);
         }
 
+        this.DashboardView.ConnectionString = this.ConnectionString;
+
         return await this.HostScreen.Router.Navigate.Execute(this.DashboardView);
     }
     #endregion

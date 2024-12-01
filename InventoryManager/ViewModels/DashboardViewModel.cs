@@ -1,8 +1,19 @@
 ﻿using ReactiveUI;
 using System;
+using System.Diagnostics;
+using System.Reactive;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using FirebirdSql.Data.FirebirdClient;
+using InventoryManager.Views;
 
 namespace InventoryManager.ViewModels;
 
+/// <summary>
+/// A <see cref="ViewModelBase"/> made for the main dashboard screen of the
+/// application.
+/// </summary>
 public class DashboardViewModel : ViewModelBase, IRoutableViewModel
 {
     #region PROPERTIES
@@ -16,7 +27,15 @@ public class DashboardViewModel : ViewModelBase, IRoutableViewModel
     /// The connection string meant to be used to connect to
     /// the Firebird SQL Server.
     /// </summary>
-    //public FbConnectionStringBuilder ConnectionString { get; set; }
+    public FbConnectionStringBuilder ConnectionString { get; set; }
+    #endregion
+
+    #region COMMANDS
+    /// <summary>
+    /// A <see cref="ReactiveCommand{Unit, IRoutableViewModel}"/> to navigate back to
+    /// the <see cref="LoginView"/>.
+    /// </summary>
+    public ReactiveCommand<Unit, IRoutableViewModel> LogoutCommand { get; }
     #endregion
 
     #region CONSTRUCTORS
@@ -26,7 +45,8 @@ public class DashboardViewModel : ViewModelBase, IRoutableViewModel
     /// </summary>
     public DashboardViewModel()
     {
-        //this.ConnectionString = new FbConnectionStringBuilder();
+        this.ConnectionString = new FbConnectionStringBuilder();
+        this.LogoutCommand = ReactiveCommand.CreateFromTask(Logout);
     }
 
     /// <summary>
@@ -39,6 +59,7 @@ public class DashboardViewModel : ViewModelBase, IRoutableViewModel
     public DashboardViewModel(IScreen hostScreen)
     {
         this.HostScreen = hostScreen;
+        this.LogoutCommand = ReactiveCommand.CreateFromTask<IRoutableViewModel>(Logout);
     }
 
     /// <summary>
@@ -52,10 +73,22 @@ public class DashboardViewModel : ViewModelBase, IRoutableViewModel
     /// A <see cref="FbConnectionStringBuilder"/> to be used as the connection string for the 
     /// Firebird SQL Server.
     /// </param>
-    //public DashboardViewModel(IScreen hostScreen, FbConnectionStringBuilder connectionString)
-    //{
-    //    this.HostScreen = hostScreen;
-    //    this.ConnectionString = connectionString;
-    //}
+    public DashboardViewModel(IScreen hostScreen, FbConnectionStringBuilder connectionString)
+    {
+        this.HostScreen = hostScreen;
+        this.ConnectionString = connectionString;
+        this.LogoutCommand = ReactiveCommand.CreateFromTask<IRoutableViewModel>(Logout);
+    }
+    #endregion
+
+    #region METHODS
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private async Task<IRoutableViewModel> Logout()
+    {
+        return await this.HostScreen.Router.NavigateBack.Execute();
+    }
     #endregion
 }
