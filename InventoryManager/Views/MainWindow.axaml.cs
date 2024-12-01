@@ -1,13 +1,4 @@
-﻿using Avalonia.Markup.Xaml;
-using Avalonia.ReactiveUI;
-using InventoryManager.ViewModels;
-using ReactiveUI;
-using System.Diagnostics;
-using System.Reactive;
-using System.Reactive.Disposables;
-using System.Threading.Tasks;
-
-namespace InventoryManager.Views;
+﻿namespace InventoryManager.Views;
 
 /// <summary>
 /// An object that represents the programs main window as a <see cref="ReactiveWindow{MainWindowViewModel}"/>

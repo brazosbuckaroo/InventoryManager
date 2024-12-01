@@ -1,15 +1,4 @@
-﻿using Avalonia.Controls;
-using InventoryManager.Views;
-using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive;
-using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InventoryManager.ViewModels;
+﻿namespace InventoryManager.ViewModels;
 
 /// <summary>
 /// A View Model for the <see cref="LoginErrorWindow"/>.

@@ -1,12 +1,4 @@
-﻿using InventoryManager.Models.Types;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace InventoryManager.Models.Services;
+﻿namespace InventoryManager.Models.Services;
 
 /// <summary>
 /// An empty marker interface for anything related to 

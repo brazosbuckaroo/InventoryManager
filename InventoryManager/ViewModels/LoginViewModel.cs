@@ -1,15 +1,3 @@
-using InventoryManager.Models.Services;
-using InventoryManager.Models.Types;
-using InventoryManager.Views;
-using ReactiveUI;
-using System;
-using System.Diagnostics;
-using System.Reactive;
-using System.Reactive.Linq;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using FirebirdSql.Data.FirebirdClient;
-
 namespace InventoryManager.ViewModels;
 
 /// <summary>

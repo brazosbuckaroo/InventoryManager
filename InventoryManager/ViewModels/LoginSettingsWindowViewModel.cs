@@ -1,25 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Resources;
-using System.Reflection;
-using System.Diagnostics;
-using InventoryManager.Assets;
-using System.Windows.Input;
-using ReactiveUI;
-using Avalonia.Controls;
-using InventoryManager.Views;
-using System.Reactive.Linq;
-using Avalonia.ReactiveUI;
-using System.Threading;
-using InventoryManager.Models.Types;
-using System.Reactive;
-
-namespace InventoryManager.ViewModels;
+﻿namespace InventoryManager.ViewModels;
 
 /// <summary>
 /// A class that hold the business logic for the <see cref="LoginSettingsWindow"/>.

@@ -1,14 +1,4 @@
-﻿using ReactiveUI;
-using System;
-using System.Diagnostics;
-using System.Reactive;
-using System.Reactive.Linq;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using FirebirdSql.Data.FirebirdClient;
-using InventoryManager.Views;
-
-namespace InventoryManager.ViewModels;
+﻿namespace InventoryManager.ViewModels;
 
 /// <summary>
 /// A <see cref="ViewModelBase"/> made for the main dashboard screen of the

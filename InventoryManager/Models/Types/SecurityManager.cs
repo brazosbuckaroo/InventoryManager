@@ -1,16 +1,4 @@
-﻿using InventoryManager.Models.Services;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FirebirdSql.Data.FirebirdClient;
-using FirebirdSql.Data.Services;
-
-namespace InventoryManager.Models.Types;
+﻿namespace InventoryManager.Models.Types;
 
 /// <summary>
 /// A class meant to manage the security service of the

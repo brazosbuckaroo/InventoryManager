@@ -1,18 +1,3 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.ReactiveUI;
-using Avalonia.Markup.Xaml;
-using Avalonia.Platform.Storage;
-using InventoryManager.ViewModels;
-using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using ReactiveUI;
-using System.Linq;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-
-
 namespace InventoryManager.Views;
 
 /// <summary>

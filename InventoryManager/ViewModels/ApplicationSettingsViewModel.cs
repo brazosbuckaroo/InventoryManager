@@ -1,13 +1,4 @@
-﻿using InventoryManager.Models.Types;
-using InventoryManager.Models.Services;
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace InventoryManager.ViewModels;
+﻿namespace InventoryManager.ViewModels;
 
 /// <summary>
 /// A class that provides actual methods and shit to the

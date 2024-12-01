@@ -1,6 +1,4 @@
-﻿using ReactiveUI;
-
-namespace InventoryManager.ViewModels;
+﻿namespace InventoryManager.ViewModels;
 
 public class ViewModelBase : ReactiveObject, IActivatableViewModel
 {

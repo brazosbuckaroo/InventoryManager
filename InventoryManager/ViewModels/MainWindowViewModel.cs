@@ -1,17 +1,4 @@
-﻿using InventoryManager.Models.Services;
-using InventoryManager.Views;
-using ReactiveUI;
-using Splat;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive;
-using System.Reactive.Disposables;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace InventoryManager.ViewModels;
+﻿namespace InventoryManager.ViewModels;
 
 /// <summary>
 /// A class meant to contain all the ViewModels that the <see cref="MainWindow"/>

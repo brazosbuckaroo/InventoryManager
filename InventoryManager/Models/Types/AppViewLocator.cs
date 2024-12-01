@@ -1,13 +1,4 @@
-﻿using InventoryManager.ViewModels;
-using InventoryManager.Views;
-using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InventoryManager.Models.Types;
+﻿namespace InventoryManager.Models.Types;
 
 /// <summary>
 /// A basic View Locator to find view for multiple

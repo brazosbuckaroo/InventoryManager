@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FirebirdSql.Data.FirebirdClient;
-
-
-namespace InventoryManager.Models.Services;
+﻿namespace InventoryManager.Models.Services;
 
 /// <summary>
 /// An interface meant to be used for user verification of
