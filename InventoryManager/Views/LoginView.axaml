@@ -1,0 +1,64 @@
+<rxui:ReactiveUserControl
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:rxui="http://reactiveui.net"
+             xmlns:vm="clr-namespace:InventoryManager.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="InventoryManager.Views.LoginView"
+             x:DataType="vm:LoginViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:LoginViewModel />
+  </Design.DataContext>
+
+  <StackPanel Spacing="150">
+    <DockPanel HorizontalAlignment="Right">
+      <Button Background="Black"
+              Command="{Binding OpenLoginSettingsCommand}">
+        <PathIcon Data="{DynamicResource SettingsIconData}"
+                  Foreground="DimGray">
+        </PathIcon>
+      </Button>
+    </DockPanel>
+
+    <StackPanel Spacing="16"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+      <TextBox Watermark="Enter Username"
+               Width="200"
+               FontSize="12"
+               Text="{Binding Username}">
+      </TextBox>
+
+      <TextBox Watermark="Enter Password"
+               PasswordChar="*"
+               Width="200"
+               FontSize="12"
+               Text="{Binding Password}">
+      </TextBox>
+
+      <Button HorizontalAlignment="Stretch"
+              HorizontalContentAlignment="Center"
+              Background="DimGray"
+              FontSize="12"
+              Command="{Binding LoginCommand}"
+              HotKey="Enter">
+        <StackPanel Orientation="Horizontal"
+                    Spacing="12">
+          <TextBlock FontSize="12"
+                     VerticalAlignment="Center">
+            Login
+          </TextBlock>
+          
+          <PathIcon Data="{DynamicResource LoginIconData}"
+                    Foreground="LightGreen"
+                    HorizontalAlignment="Right">
+          </PathIcon>
+        </StackPanel>
+      </Button>
+    </StackPanel>
+  </StackPanel>
+</rxui:ReactiveUserControl>

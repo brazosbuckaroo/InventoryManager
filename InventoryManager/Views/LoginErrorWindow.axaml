@@ -1,0 +1,45 @@
+<rxui:ReactiveWindow
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:rxui="http://reactiveui.net"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:InventoryManager.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="100"
+        Height="100"
+        Width="250"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        x:Class="InventoryManager.Views.LoginErrorWindow"
+        x:DataType="vm:LoginErrorWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Login Error">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:LoginErrorWindowViewModel />
+  </Design.DataContext>
+
+  <StackPanel HorizontalAlignment="Center"
+              Margin="15"
+              Spacing="16">
+    <TextBlock Text="{Binding ErrorMessage}"
+               FontSize="15">
+    </TextBlock>
+
+    <Button HorizontalAlignment="Center"
+            HotKey="Enter"
+            Background="DimGray"
+            Command="{Binding AcceptErrorCommand}">
+      <StackPanel Orientation="Horizontal"
+                  Spacing="8">
+        <TextBlock FontSize="16">OK</TextBlock>
+
+        <PathIcon Data="{DynamicResource ConfirmCheckMarkIconData}"
+                  Foreground="LightGreen">
+        </PathIcon>
+      </StackPanel>
+    </Button>
+  </StackPanel>
+</rxui:ReactiveWindow>

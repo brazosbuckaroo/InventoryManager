@@ -1,0 +1,204 @@
+<rxui:ReactiveWindow
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:rxui="http://reactiveui.net"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:InventoryManager.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="350"
+        Height="350"
+        Width="400"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        x:Class="InventoryManager.Views.LoginSettingsWindow"
+        x:DataType="vm:LoginSettingsWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Login Settings">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:LoginSettingsWindowViewModel />
+  </Design.DataContext>
+
+  <StackPanel Margin="8"
+              Spacing="8">
+    <Label FontSize="16"
+           FontWeight="Bold">
+      Server Settings:
+    </Label>
+
+    <Border Background="DimGray">
+      <Grid ColumnDefinitions="auto, 200, auto"
+            RowDefinitions="auto, auto, auto, auto, auto">
+        <Label Content="Server IP"
+               FontSize="12"
+               FontWeight="Bold"
+               Grid.Column="0"
+               Grid.Row="0"
+               VerticalAlignment="Center"
+               Margin="4">
+        </Label>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="0"
+                 Watermark="Server IP"
+                 Margin="4"
+                 FontSize="12"
+                 Text="{Binding IpAddress}">
+        </TextBox>
+
+        <Label Content="Database File Path"
+               FontSize="12"
+               FontWeight="Bold"
+               Grid.Column="0"
+               Grid.Row="1"
+               VerticalAlignment="Center"
+               Margin="4">
+        </Label>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="1"
+                 Watermark="Database File Path"
+                 Margin="4"
+                 FontSize="12"
+                 Text="{Binding DatabaseFilePath}">
+        </TextBox>
+
+        <Button Grid.Column="2"
+                Grid.Row="1"
+                Background="DimGray"
+                Command="{Binding SelectFileDialogCommand}">
+          <PathIcon Data="{DynamicResource AddFilePathIconData}"
+                    Foreground="Tan">
+          </PathIcon>
+        </Button>
+
+        <Label Content="Character Set"
+               FontSize="12"
+               FontWeight="Bold"
+               Grid.Column="0"
+               Grid.Row="2"
+               VerticalAlignment="Center"
+               Margin="4">
+        </Label>
+
+        <ComboBox Grid.Column="1"
+                  Grid.Row="2"
+                  Margin="4"
+                  FontSize="12"
+                  PlaceholderText="Character Set Options"
+                  Width="200"
+                  ItemsSource="{Binding CharacterSets}"
+                  VerticalContentAlignment="Center"
+                  SelectedItem="{Binding SelectedCharacterSet}">
+        </ComboBox>
+      </Grid>
+    </Border>
+
+    <Label FontSize="16"
+           FontWeight="Bold">
+      File Save Directories:
+    </Label>
+
+    <Border Background="DimGray">
+      <Grid ColumnDefinitions="auto, 200, auto"
+            RowDefinitions="auto, auto, auto">
+        <Label Content="Images File Path"
+               FontSize="12"
+               FontWeight="Bold"
+               Grid.Column="0"
+               Grid.Row="0"
+               VerticalAlignment="Center"
+               Margin="4">
+        </Label>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="0"
+                 Watermark="Images File Path"
+                 Margin="4"
+                 FontSize="12"
+                 Text="{Binding ImagesFolderPath}">
+        </TextBox>
+
+        <Button Grid.Column="2"
+                Grid.Row="0"
+                Background="DimGray"
+                Command="{Binding SelectFolderDialogCommand}">
+          <PathIcon Data="{DynamicResource AddFilePathIconData}"
+                    Foreground="Tan">
+          </PathIcon>
+        </Button>
+
+        <Label Content="Manuals File Path"
+               FontSize="12"
+               FontWeight="Bold"
+               Grid.Column="0"
+               Grid.Row="1"
+               VerticalAlignment="Center"
+               Margin="4">
+        </Label>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="1"
+                 Watermark="Manuals File Path"
+                 Margin="4"
+                 FontSize="12"
+                 Text="{Binding ManualFolderPath}">
+        </TextBox>
+
+        <Button Grid.Column="2"
+                Grid.Row="1"
+                Background="DimGray"
+                Command="{Binding SelectFolderDialogCommand}">
+          <Button.CommandParameter>
+            <sys:Boolean>True</sys:Boolean>
+          </Button.CommandParameter>
+
+          <PathIcon Data="{DynamicResource AddFilePathIconData}"
+                    Foreground="Tan">
+          </PathIcon>
+        </Button>
+      </Grid>
+    </Border>
+
+    <Grid HorizontalAlignment="Center"
+          ColumnDefinitions="auto, auto"
+          Margin="8">
+      <Button Content="Ok"
+              Grid.Column="0"
+              Width="100"
+              Margin="4"
+              Command="{Binding AcceptSettingsCommand}">
+        <StackPanel Orientation="Horizontal"
+                    Spacing="8">
+          <Label FontSize="12"
+                 HorizontalAlignment="Center">
+            Accept
+          </Label>
+
+          <PathIcon Data="{DynamicResource ConfirmCheckMarkIconData}"
+                    Foreground="LightGreen">
+          </PathIcon>
+        </StackPanel>
+      </Button>
+
+      <Button Grid.Column="1"
+              Width="100"
+              Margin="4"
+              Command="{Binding CancelCommand}">
+        <StackPanel Orientation="Horizontal"
+                    Spacing="8">
+          <Label FontSize="12"
+                 HorizontalAlignment="Center">
+            Cancel
+          </Label>
+
+          <PathIcon Data="{DynamicResource CancelXIconData}"
+                    Foreground="LightCoral">
+          </PathIcon>
+        </StackPanel>
+      </Button>
+    </Grid>
+  </StackPanel>
+</rxui:ReactiveWindow>
